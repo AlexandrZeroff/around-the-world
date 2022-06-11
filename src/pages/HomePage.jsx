@@ -27,6 +27,10 @@ const HomePage = ({ countries, setCountries }) => {
   }
 
   useEffect(() => {
+    handleSearch();
+  }, [countries])
+
+  useEffect(() => {
     if (!countries.length)
       axios.get(ALL_CONTRIES).then(({ data }) => setCountries(data))
   }, [])
@@ -60,7 +64,6 @@ const HomePage = ({ countries, setCountries }) => {
               key={c.name.common}
               onClick={() => {
                 navigate(`/country/${c.name.common}`)
-                console.log()
               }}
               {...countryInfo}
             />

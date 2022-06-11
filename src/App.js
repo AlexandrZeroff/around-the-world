@@ -23,7 +23,6 @@ function App() {
           <Route exact path="/country/:name" element={<Details />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-
       </Main>
     </>
   );
